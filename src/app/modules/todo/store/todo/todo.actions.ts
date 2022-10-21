@@ -1,9 +1,11 @@
 import {Action} from "@ngrx/store";
+import {ToDoState} from "./todo.reducer";
 export enum todoActionsType {
   create = "[TODO] create todo item",
   delete = "[TODO] delete todo item",
   toggle = "[TODO] toggle todo item",
-  edit = "[TODO] edit todo item"
+  edit = "[TODO] edit todo item",
+  load = "[TODO] load todo state"
 }
 
 //передаем имя нового item в action в полезной нагрузке, чтобы создать новую запись; генерайия id будет в reducer
@@ -34,6 +36,13 @@ export class ToDoEditAction implements Action {
   }
 }
 
+export class ToDoLoadStateAction implements Action {
+  readonly type = todoActionsType.load;
+
+  constructor(public payload: {state: ToDoState}) {
+  }
+}
+
 
 //экспортируем набор экшенов, которые у нас есть
-export type ToDoActions = ToDoCreateAction | ToDoDeleteAction | ToDoToggleAction | ToDoEditAction;
+export type ToDoActions = ToDoCreateAction | ToDoDeleteAction | ToDoToggleAction | ToDoEditAction | ToDoLoadStateAction;

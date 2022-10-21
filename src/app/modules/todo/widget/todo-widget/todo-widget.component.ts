@@ -9,6 +9,7 @@ import {ToDoCreateAction, ToDoDeleteAction, ToDoEditAction, ToDoToggleAction} fr
 import {todoListSelector} from "../../store/todo/todo.selectors";
 import {Observable} from "rxjs";
 import {ToDo} from "../../model/todo";
+import {TodoSyncStorageService} from "../../service/todo-sync-storage.service";
 //import {Observable} from "rxjs";
 
 @Component({
@@ -19,10 +20,15 @@ import {ToDo} from "../../model/todo";
 export class TodoWidgetComponent implements OnInit {
 
   todoList = [];
-  constructor(private store$: Store<ToDoState>) { }
+  constructor(
+    private store$: Store<ToDoState>,
+    private todoSyncStorage: TodoSyncStorageService
+  ) { }
+
   todoList$: Observable<ToDo[]> = this.store$.pipe(select(todoListSelector));
 
   ngOnInit(): void {
+    this.todoSyncStorage.init()
   }
 
   onCreate(name: string) {
