@@ -4,5 +4,5 @@
   <span class="lead fw-normal mb-0" *ngIf="!todo.completed">{{todo.name}}</span>
   <del class="lead fw-normal mb-0" *ngIf="todo.completed"><span >{{todo.name}}</span></del>
 </label>
-<span class="my-auto" (click)="onEdit()"><i class="fas fa-pencil-alt me-3"></i>Edit</span>
-<span class="my-auto" (click)="onDelete()">Delete</span>
+<span class="my-auto" (click)="onEdit()"><i style="font-size: 1.5rem;" class="bi bi-pen bi-pen-fill text-primary d-inline-block me-3"></i></span>
+<span class="my-auto" (click)="onDelete()"><i style="font-size: 1.5rem;" class="bi bi-trash text-danger mr-1"></i></span>
