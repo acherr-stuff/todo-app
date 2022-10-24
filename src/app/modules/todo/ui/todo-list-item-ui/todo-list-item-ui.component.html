@@ -1,7 +1,8 @@
-<label>
-  <input type="checkbox" [checked]="todo.completed" (click)="onToggle($event)">
-  <span *ngIf="!todo.completed">{{todo.name}}</span>
-  <del *ngIf="todo.completed"><span>{{todo.name}}</span></del>
+
+<label class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+  <input type="checkbox" class="form-check-input me-3" [checked]="todo.completed" (click)="onToggle($event)">
+  <span class="lead fw-normal mb-0" *ngIf="!todo.completed">{{todo.name}}</span>
+  <del class="lead fw-normal mb-0" *ngIf="todo.completed"><span >{{todo.name}}</span></del>
 </label>
-<span (click)="onEdit()">Edit</span>
-<span (click)="onDelete()">Delete</span>
+<span class="my-auto" (click)="onEdit()"><i class="fas fa-pencil-alt me-3"></i>Edit</span>
+<span class="my-auto" (click)="onDelete()">Delete</span>

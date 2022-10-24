@@ -9,6 +9,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {TodoModule} from "./modules/todo/todo.module";
 import {RouterModule} from "@angular/router";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {RouterModule} from "@angular/router";
 
     }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    TodoModule
+    TodoModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,13 @@
-<form action="#" (ngSubmit)="onCreate()">
-  <input type="text" name="name" [(ngModel)]="name" >
-  <button [disabled]="!name">Create todo item</button>
-</form>
+<div class="pb-2">
+  <div class="card">
+    <div class="card-body">
+        <form class="d-flex flex-row align-items-center" action="#" (ngSubmit)="onCreate()">
+          <input type="text" class="form-control form-control-lg" autocomplete="off" name="name" [(ngModel)]="name" >
+          <a href="#!" data-mdb-toggle="tooltip" title="Set due date"><i
+                  class="fas fa-calendar-alt fa-lg me-3"></i></a>
+          <button class="btn btn-primary btn-create" [disabled]="!name">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<hr class="my-4">
