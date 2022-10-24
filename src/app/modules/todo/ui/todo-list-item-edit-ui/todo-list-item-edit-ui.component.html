@@ -1,5 +1,11 @@
-<form action="#" (ngSubmit)="onEdit()">
-  <input type="text" name="name" [(ngModel)]="name">
-  <button [disabled]="!name">Ok</button>
-  <button type="button" (click)="onCancel()">Cancel</button>
-</form>
+<div class="card border-0">
+    <div class="card-body p-0 shadow-sm">
+        <form class="d-flex flex-row align-items-center" action="#" (ngSubmit)="onEdit()">
+            <!--  <label class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">-->
+            <input class="form-control form-control-lg" type="text" name="name" [(ngModel)]="name">
+            <button [disabled]="!name"><i style="font-size: 1.5rem;" class="bi bi-check2 text-primary d-inline-block me-3"></i></button>
+            <button type="button" (click)="onCancel()"><i style="font-size: 1.5rem;" class="bi bi-arrow-clockwise text-warning d-inline-block me-3"></i></button>
+            <!--  </label>-->
+        </form>
+    </div>
+</div>
